@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Navbar from "../components/Navbar"; // Ek bar piche jane ke liye ../ use karein
-import Footer from "../components/Footer"; // Ek bar piche jane ke liye ../ use karein
+import Navbar from "../components/Navbar"; 
+import Footer from "../components/Footer";
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -13,10 +14,10 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-// HSI Pakistan ki SEO details [cite: 42, 45, 53]
 export const metadata: Metadata = {
   title: "HSI Pakistan | Human Security Initiative",
   description: "A non-profit, people-centered initiative focused on human security and sustainable development in Pakistan.",
+  // Mobile responsive meta tag Next.js khud handle karta hai, lekin hum width define kar sakte hain
 };
 
 export default function RootLayout({
@@ -25,18 +26,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-      <body className="min-h-screen flex flex-col bg-white">
-        {/* Navbar top par rahega [cite: 2] */}
-        <Navbar />
-        
-        {/* Saare pages (Home, About, Programs, Membership, Contact) yahan load honge */}
-        <main className="flex-grow">
-          {children}
-        </main>
+    <html lang="en" className="scroll-smooth">
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white`}>
+        {/* Is div ko maine add kiya hai taake horizontal scroll ka masla hamesha ke liye khatam ho jaye */}
+        <div className="flex flex-col min-h-screen overflow-x-hidden relative">
+          
+          <Navbar />
+          
+          {/* Main area hamesha screen ki poori width lega lekin overflow nahi karega */}
+          <main className="flex-grow w-full relative">
+            {children}
+          </main>
 
-        {/* Footer bottom par rahega [cite: 37] */}
-        <Footer />
+          <Footer />
+          
+        </div>
       </body>
     </html>
   );

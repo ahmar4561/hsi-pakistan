@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { 
   BookOpen, Heart, Sprout, Home, Scale, 
@@ -7,7 +8,6 @@ import {
 import Link from "next/link";
 
 export default function ProgramsPage() {
-  // Document ke mutabiq 7 Mukammal Initiatives
   const mainPrograms = [
     {
       title: "Education Initiatives",
@@ -68,33 +68,33 @@ export default function ProgramsPage() {
   ];
 
   return (
-    <main className="min-h-screen bg-slate-50 py-24 px-6">
+    <main className="min-h-screen bg-slate-50 py-16 md:py-24 px-4 md:px-6">
       <div className="max-w-7xl mx-auto">
         {/* Header section */}
-        <div className="text-center max-w-3xl mx-auto mb-20 space-y-4">
-          <div className="inline-block px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-xs font-black uppercase tracking-widest">
+        <div className="text-center max-w-3xl mx-auto mb-16 md:mb-20 space-y-4">
+          <div className="inline-block px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-[10px] md:text-xs font-black uppercase tracking-widest">
             Our Mission in Action
           </div>
-          <h1 className="text-5xl md:text-6xl font-black text-slate-900 tracking-tight italic">Our Programs</h1>
-          <p className="text-slate-500 text-lg leading-relaxed">
+          <h1 className="text-4xl md:text-6xl font-black text-slate-900 tracking-tight italic uppercase leading-tight">Our Programs</h1>
+          <p className="text-slate-500 text-base md:text-lg leading-relaxed px-2">
             Human Security Initiative Pakistan (HSI) focuses on community-first planning and long-term sustainable impact across these core areas.
           </p>
         </div>
 
-        {/* Programs Grid - Now with all 7 Programs */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-24">
+        {/* Programs Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-16 md:mb-24">
           {mainPrograms.map((p, i) => (
-            <div key={i} className="bg-white rounded-[2.5rem] p-10 shadow-sm border border-slate-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group">
-              <div className="w-16 h-16 bg-slate-50 text-blue-600 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-blue-600 group-hover:text-white transition-all">
-                {p.icon}
+            <div key={i} className="bg-white rounded-[2rem] md:rounded-[2.5rem] p-8 md:p-10 shadow-sm border border-slate-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group">
+              <div className="w-14 h-14 md:w-16 md:h-16 bg-slate-50 text-blue-600 rounded-2xl flex items-center justify-center mb-6 md:mb-8 group-hover:bg-blue-600 group-hover:text-white transition-all">
+                {React.cloneElement(p.icon as React.ReactElement, { size: 28 })}
               </div>
-              <span className="text-xs font-bold text-blue-500 uppercase tracking-widest">{p.id}</span>
-              <h3 className="text-2xl font-black text-slate-900 mt-2 mb-4 italic">{p.title}</h3>
-              <p className="text-slate-500 mb-8 leading-relaxed">{p.desc}</p>
+              <span className="text-[10px] md:text-xs font-bold text-blue-500 uppercase tracking-widest">{p.id}</span>
+              <h3 className="text-xl md:text-2xl font-black text-slate-900 mt-2 mb-4 italic uppercase">{p.title}</h3>
+              <p className="text-slate-500 text-sm md:text-base mb-6 md:mb-8 leading-relaxed">{p.desc}</p>
               <ul className="space-y-3">
                 {p.features.map((f, idx) => (
-                  <li key={idx} className="flex items-center gap-2 text-sm font-bold text-slate-700">
-                    <ShieldCheck size={16} className="text-blue-500" /> {f}
+                  <li key={idx} className="flex items-center gap-2 text-xs md:text-sm font-bold text-slate-700">
+                    <ShieldCheck size={16} className="text-blue-500 shrink-0" /> {f}
                   </li>
                 ))}
               </ul>
@@ -102,35 +102,35 @@ export default function ProgramsPage() {
           ))}
         </div>
 
-        {/* Call to Action Section (Refined from Document) */}
-        <div className="bg-blue-900 rounded-[4rem] p-12 md:p-20 text-white relative overflow-hidden">
-          <div className="absolute top-0 right-0 p-20 opacity-10">
+        {/* Call to Action Section */}
+        <div className="bg-blue-900 rounded-[2.5rem] md:rounded-[4rem] p-8 md:p-20 text-white relative overflow-hidden">
+          <div className="absolute top-0 right-0 p-20 opacity-10 pointer-events-none hidden lg:block">
             <Briefcase size={300} />
           </div>
-          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div className="space-y-8">
-              <h2 className="text-4xl md:text-5xl font-black italic leading-tight">Partner With Our Initiatives</h2>
-              <p className="text-blue-100 text-lg leading-relaxed">
+          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 items-center">
+            <div className="space-y-6 md:space-y-8 text-center lg:text-left">
+              <h2 className="text-3xl md:text-5xl font-black italic leading-tight uppercase">Partner With Our Initiatives</h2>
+              <p className="text-blue-100 text-base md:text-lg leading-relaxed">
                 We believe in the power of collaboration. Whether you are an individual, an organization, or a donor, your support can help scale these programs across Pakistan.
               </p>
-              <div className="flex flex-wrap gap-4 font-black">
-                 <div className="flex items-center gap-2 bg-blue-800/50 px-4 py-2 rounded-xl border border-blue-700">
-                   <ShieldCheck size={18} className="text-blue-400" /> Sustainable Impact
+              <div className="flex flex-wrap justify-center lg:justify-start gap-3 font-black text-[10px] md:text-sm">
+                 <div className="flex items-center gap-2 bg-blue-800/50 px-3 py-2 rounded-xl border border-blue-700">
+                   <ShieldCheck size={16} className="text-blue-400" /> Sustainable Impact
                  </div>
-                 <div className="flex items-center gap-2 bg-blue-800/50 px-4 py-2 rounded-xl border border-blue-700">
-                   <ShieldCheck size={18} className="text-blue-400" /> Transparent Reporting
+                 <div className="flex items-center gap-2 bg-blue-800/50 px-3 py-2 rounded-xl border border-blue-700">
+                   <ShieldCheck size={16} className="text-blue-400" /> Transparent Reporting
                  </div>
               </div>
             </div>
             
-            <div className="bg-white p-12 rounded-[3rem] space-y-8 text-slate-900 shadow-2xl">
-              <h3 className="text-3xl font-black italic text-blue-900">Get Involved</h3>
-              <p className="text-slate-500 font-medium">Collaborate with us to create lasting change in Pakistan through community-centered sustainable development.</p>
+            <div className="bg-white p-8 md:p-12 rounded-[2rem] md:rounded-[3rem] space-y-6 md:space-y-8 text-slate-900 shadow-2xl">
+              <h3 className="text-2xl md:text-3xl font-black italic text-blue-900 text-center lg:text-left">Get Involved</h3>
+              <p className="text-slate-500 text-sm md:text-base font-medium text-center lg:text-left">Collaborate with us to create lasting change in Pakistan through community-centered sustainable development.</p>
               <div className="flex flex-col gap-4">
-                <Link href="/contact" className="flex items-center justify-center gap-2 bg-blue-600 text-white px-8 py-5 rounded-2xl font-black hover:bg-blue-700 transition-all text-lg shadow-lg shadow-blue-600/20">
+                <Link href="/contact" className="flex items-center justify-center gap-2 bg-blue-600 text-white px-6 py-4 md:px-8 md:py-5 rounded-2xl font-black hover:bg-blue-700 transition-all text-base md:text-lg shadow-lg shadow-blue-600/20">
                   Collaborate With Us <ArrowRight size={20} />
                 </Link>
-                <Link href="/membership" className="text-center text-blue-600 font-black hover:underline">
+                <Link href="/membership" className="text-center text-blue-600 font-black hover:underline text-sm md:text-base">
                   Join as a Member
                 </Link>
               </div>

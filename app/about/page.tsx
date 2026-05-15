@@ -4,34 +4,35 @@ export default function AboutPage() {
   return (
     <main className="min-h-screen bg-white">
       {/* 1. Page Header */}
-      <section className="bg-blue-900 text-white py-24 px-6 text-center relative overflow-hidden">
+      <section className="bg-blue-900 text-white py-16 md:py-24 px-6 text-center relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
-          <Globe size={400} className="absolute -right-20 -bottom-20" />
+          <Globe size={400} className="absolute -right-20 -bottom-20 hidden md:block" />
         </div>
         <div className="relative z-10">
-          <h1 className="text-5xl md:text-7xl font-black mb-6 tracking-tighter italic">About HSI Pakistan</h1>
-          <p className="text-blue-200 max-w-3xl mx-auto text-lg md:text-xl font-medium leading-relaxed">
+          <h1 className="text-4xl md:text-7xl font-black mb-6 tracking-tighter italic">About HSI Pakistan</h1>
+          <p className="text-blue-200 max-w-3xl mx-auto text-base md:text-xl font-medium leading-relaxed">
             "A people-centered initiative focused on human security and sustainable development to ensure dignity, safety, and equality for all."
           </p>
         </div>
       </section>
 
-      {/* 2. HSI Meaning Section (New - From Document) */}
-      <section className="py-20 px-6 bg-slate-50 border-b border-slate-100">
+      {/* 2. HSI Meaning Section */}
+      <section className="py-16 px-6 bg-slate-50 border-b border-slate-100">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-black text-slate-900 italic">What does HSI stand for?</h2>
+          <div className="text-center mb-10 md:mb-12">
+            <h2 className="text-2xl md:text-3xl font-black text-slate-900 italic">What does HSI stand for?</h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          {/* Grid: 1 col on mobile, 2 on tablet, 4 on desktop */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
             {[
               { letter: "H", word: "Human", desc: "Dignity, rights, and well-being at the center of our work." },
               { letter: "S", word: "Security", desc: "Freedom from fear, poverty, and systemic inequality." },
               { letter: "I", word: "Initiative", desc: "Proactive change through action-oriented projects." },
               { letter: "P", word: "Pakistan", desc: "Dedicated to national and grassroots community development." }
             ].map((item, i) => (
-              <div key={i} className="bg-white p-8 rounded-3xl shadow-sm border border-slate-200 hover:border-blue-300 transition-colors">
-                <span className="text-5xl font-black text-blue-600/20">{item.letter}</span>
-                <h3 className="text-xl font-black text-slate-900 mt-2">— {item.word}</h3>
+              <div key={i} className="bg-white p-6 md:p-8 rounded-3xl shadow-sm border border-slate-200 hover:border-blue-300 transition-colors">
+                <span className="text-4xl md:text-5xl font-black text-blue-600/20">{item.letter}</span>
+                <h3 className="text-lg md:text-xl font-black text-slate-900 mt-2">— {item.word}</h3>
                 <p className="text-slate-500 text-sm mt-3 leading-relaxed">{item.desc}</p>
               </div>
             ))}
@@ -40,50 +41,50 @@ export default function AboutPage() {
       </section>
 
       {/* 3. Vision & Mission */}
-      <section className="py-24 px-6 max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          <div className="bg-white p-12 rounded-[3rem] border border-slate-200 shadow-xl space-y-6 relative overflow-hidden group">
-            <div className="w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform">
-              <Eye size={35} />
+      <section className="py-16 md:py-24 px-6 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+          <div className="bg-white p-8 md:p-12 rounded-[2rem] md:rounded-[3rem] border border-slate-200 shadow-xl space-y-6 relative overflow-hidden group">
+            <div className="w-14 h-14 md:w-16 md:h-16 bg-blue-600 rounded-2xl flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform">
+              <Eye size={30} />
             </div>
-            <h2 className="text-4xl font-black text-slate-900 italic">Our Vision</h2>
-            <p className="text-slate-600 text-lg leading-relaxed">
+            <h2 className="text-3xl md:text-4xl font-black text-slate-900 italic">Our Vision</h2>
+            <p className="text-slate-600 text-base md:text-lg leading-relaxed">
               We envision a secure, inclusive, and resilient Pakistan where every individual has equal opportunities to lead a life with dignity and freedom from deprivation.
             </p>
           </div>
 
-          <div className="bg-blue-900 p-12 rounded-[3rem] text-white space-y-6 shadow-xl relative overflow-hidden group">
-            <div className="w-16 h-16 bg-blue-500 rounded-2xl flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform">
-              <Target size={35} />
+          <div className="bg-blue-900 p-8 md:p-12 rounded-[2rem] md:rounded-[3rem] text-white space-y-6 shadow-xl relative overflow-hidden group">
+            <div className="w-14 h-14 md:w-16 md:h-16 bg-blue-500 rounded-2xl flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform">
+              <Target size={30} />
             </div>
-            <h2 className="text-4xl font-black italic">Our Mission</h2>
-            <ul className="space-y-4 text-blue-100 text-lg font-medium">
-              <li className="flex items-center gap-3"><ShieldCheck className="text-blue-400 shrink-0" size={24} /> Reduce poverty through empowerment.</li>
-              <li className="flex items-center gap-3"><ShieldCheck className="text-blue-400 shrink-0" size={24} /> Improve access to education & healthcare.</li>
-              <li className="flex items-center gap-3"><ShieldCheck className="text-blue-400 shrink-0" size={24} /> Promote climate action & sustainability.</li>
-              <li className="flex items-center gap-3"><ShieldCheck className="text-blue-400 shrink-0" size={24} /> Support peace, justice & strong institutions.</li>
+            <h2 className="text-3xl md:text-4xl font-black italic">Our Mission</h2>
+            <ul className="space-y-4 text-blue-100 text-base md:text-lg font-medium">
+              <li className="flex items-start gap-3"><ShieldCheck className="text-blue-400 shrink-0 mt-1" size={20} /> Reduce poverty through empowerment.</li>
+              <li className="flex items-start gap-3"><ShieldCheck className="text-blue-400 shrink-0 mt-1" size={20} /> Improve access to education & healthcare.</li>
+              <li className="flex items-start gap-3"><ShieldCheck className="text-blue-400 shrink-0 mt-1" size={20} /> Promote climate action & sustainability.</li>
+              <li className="flex items-start gap-3"><ShieldCheck className="text-blue-400 shrink-0 mt-1" size={20} /> Support peace, justice & strong institutions.</li>
             </ul>
           </div>
         </div>
       </section>
 
-      {/* 4. Founder's Message (New - From Document) */}
-      <section className="py-24 bg-blue-50 px-6">
+      {/* 4. Founder's Message */}
+      <section className="py-16 md:py-24 bg-blue-50 px-6">
         <div className="max-w-5xl mx-auto">
-          <div className="bg-white rounded-[4rem] p-12 md:p-20 shadow-2xl relative">
-            <Quote size={80} className="absolute top-10 right-10 text-blue-100" />
-            <div className="flex flex-col md:flex-row items-center gap-12">
-              <div className="w-48 h-48 bg-slate-100 rounded-full flex items-center justify-center shrink-0 border-4 border-blue-100 overflow-hidden">
-                 <UserCircle2 size={150} className="text-slate-300" />
+          <div className="bg-white rounded-[2.5rem] md:rounded-[4rem] p-8 md:p-20 shadow-2xl relative">
+            <Quote size={60} className="absolute top-6 right-6 md:top-10 md:right-10 text-blue-100 hidden sm:block" />
+            <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+              <div className="w-32 h-32 md:w-48 md:h-48 bg-slate-100 rounded-full flex items-center justify-center shrink-0 border-4 border-blue-100 overflow-hidden">
+                 <UserCircle2 size={120} className="text-slate-300" />
               </div>
               <div className="space-y-6 text-center md:text-left">
-                <h2 className="text-3xl font-black text-slate-900 italic">Message from the Founder</h2>
-                <p className="text-slate-600 text-xl leading-relaxed italic">
+                <h2 className="text-2xl md:text-3xl font-black text-slate-900 italic">Message from the Founder</h2>
+                <p className="text-slate-600 text-base md:text-xl leading-relaxed italic">
                   "Human security is not just about weapons; it is about dignity, safety, and a life free from poverty. Through HSI Pakistan, we aim to build a resilient nation where every individual has the opportunity to thrive."
                 </p>
                 <div>
-                  <h4 className="text-xl font-black text-blue-600">Founder & Chairperson</h4>
-                  <p className="text-slate-500 font-bold uppercase tracking-widest text-sm">HSI Pakistan</p>
+                  <h4 className="text-lg md:text-xl font-black text-blue-600">Founder & Chairperson</h4>
+                  <p className="text-slate-500 font-bold uppercase tracking-widest text-xs md:text-sm">HSI Pakistan</p>
                 </div>
               </div>
             </div>
@@ -92,24 +93,24 @@ export default function AboutPage() {
       </section>
 
       {/* 5. Core Values */}
-      <section className="py-24 bg-slate-950 text-white px-6">
+      <section className="py-16 md:py-24 bg-slate-950 text-white px-6">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-20 space-y-4">
-            <h2 className="text-4xl md:text-5xl font-black italic">Our Core Values</h2>
-            <p className="text-slate-400">The principles that guide our impact across Pakistan.</p>
+          <div className="text-center mb-16 md:mb-20 space-y-4">
+            <h2 className="text-3xl md:text-5xl font-black italic">Our Core Values</h2>
+            <p className="text-slate-400 text-sm md:text-base">The principles that guide our impact across Pakistan.</p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-16 text-center">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16 text-center">
             {[
-              { icon: <ShieldCheck size={40} />, title: "Accountability", desc: "Absolute transparency in every project and donation." },
-              { icon: <Heart size={40} />, title: "Compassion", desc: "Human dignity and empathy are at the heart of our initiative." },
-              { icon: <Globe size={40} />, title: "Sustainability", desc: "Focusing on long-term impact rather than short-term aid." }
+              { icon: <ShieldCheck size={35} />, title: "Accountability", desc: "Absolute transparency in every project and donation." },
+              { icon: <Heart size={35} />, title: "Compassion", desc: "Human dignity and empathy are at the heart of our initiative." },
+              { icon: <Globe size={35} />, title: "Sustainability", desc: "Focusing on long-term impact rather than short-term aid." }
             ].map((value, i) => (
               <div key={i} className="space-y-6 group">
-                <div className="mx-auto w-20 h-20 bg-blue-600/10 rounded-3xl flex items-center justify-center text-blue-500 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
+                <div className="mx-auto w-16 h-16 md:w-20 md:h-20 bg-blue-600/10 rounded-3xl flex items-center justify-center text-blue-500 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
                   {value.icon}
                 </div>
-                <h3 className="text-2xl font-black italic">{value.title}</h3>
-                <p className="text-slate-400 leading-relaxed">{value.desc}</p>
+                <h3 className="text-xl md:text-2xl font-black italic">{value.title}</h3>
+                <p className="text-slate-400 text-sm md:text-base leading-relaxed">{value.desc}</p>
               </div>
             ))}
           </div>
@@ -117,13 +118,13 @@ export default function AboutPage() {
       </section>
 
       {/* 6. Alignment Section */}
-      <section className="py-32 px-6 text-center max-w-5xl mx-auto">
-        <div className="inline-flex items-center gap-3 p-4 bg-blue-50 rounded-2xl mb-8">
-            <Globe className="text-blue-600" />
-            <span className="font-black text-blue-900 uppercase tracking-tighter">SDG Aligned Initiative</span>
+      <section className="py-20 md:py-32 px-6 text-center max-w-5xl mx-auto">
+        <div className="inline-flex items-center gap-3 p-3 md:p-4 bg-blue-50 rounded-2xl mb-8">
+            <Globe className="text-blue-600" size={20} />
+            <span className="font-black text-blue-900 uppercase tracking-tighter text-xs md:text-sm">SDG Aligned Initiative</span>
         </div>
-        <h2 className="text-4xl md:text-6xl font-black text-slate-900 mb-8 italic tracking-tight">Global Vision, Local Action.</h2>
-        <p className="text-slate-600 text-xl md:text-2xl leading-relaxed">
+        <h2 className="text-3xl md:text-6xl font-black text-slate-900 mb-8 italic tracking-tight">Global Vision, Local Action.</h2>
+        <p className="text-slate-600 text-lg md:text-2xl leading-relaxed">
           Our work is strictly aligned with the **United Nations Sustainable Development Goals (SDGs)**. We believe that by localizing these global goals, we can create a secure, resilient, and prosperous Pakistan.
         </p>
       </section>
