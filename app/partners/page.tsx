@@ -67,7 +67,7 @@ export default function PartnersPage() {
   return (
     <main className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="bg-slate-900 text-white py-20 md:py-32 px-4 md:px-6 text-center relative overflow-hidden">
+      <section className="bg-slate-900 text-white py-20 md:py-32 px-4 md:px-6 text-center relative">
         <div className="relative z-10 max-w-4xl mx-auto space-y-6">
           <h1 className="text-4xl md:text-7xl font-black tracking-tighter italic uppercase leading-tight">
             Our <span className="text-blue-500">Partners</span>
@@ -83,11 +83,11 @@ export default function PartnersPage() {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {[
-              { t: "Collaboration", d: "Joint initiatives for sustainable impact.", i: <Handshake /> },
-              { t: "Transparency", d: "Clear execution in all joint initiatives.", i: <ShieldCheck /> },
-              { t: "Long-term Focus", d: "Building relationships, not one-time support.", i: <Globe /> }
+              { t: "Collaboration", d: "Joint initiatives for sustainable impact.", i: <Handshake size={24} /> },
+              { t: "Transparency", d: "Clear execution in all joint initiatives.", i: <ShieldCheck size={24} /> },
+              { t: "Long-term Focus", d: "Building relationships, not one-time support.", i: <Globe size={24} /> }
             ].map((p, i) => (
-              <div key={i} className="bg-white/10 backdrop-blur-md p-8 md:p-10 rounded-[2rem] md:rounded-[3rem] border border-white/10 text-white space-y-4">
+              <div key={i} className="bg-white/10 backdrop-blur-md p-8 md:p-10 rounded-[2rem] md:rounded-[3rem] border border-white/10 text-white space-y-4 hover:bg-white/20 transition-all">
                 <div className="bg-white text-blue-600 w-12 h-12 rounded-xl flex items-center justify-center">
                   {p.i}
                 </div>
@@ -101,12 +101,12 @@ export default function PartnersPage() {
 
       {/* Partners Grid */}
       <section className="py-16 md:py-24 px-4 md:px-6 bg-slate-50">
-        <div className="max-w-7xl mx-auto text-center md:text-left">
+        <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {partnerCategories.map((cat, i) => (
-              <div key={i} className="bg-white p-8 md:p-10 rounded-[2rem] md:rounded-[3rem] shadow-xl border border-slate-100 hover:shadow-2xl transition-all text-left">
+              <div key={i} className="bg-white p-8 md:p-10 rounded-[2rem] md:rounded-[3rem] shadow-xl border border-slate-100 hover:shadow-2xl transition-all">
                 <div className="w-14 h-14 bg-slate-50 rounded-2xl flex items-center justify-center mb-6">
-                  {cat.icon}
+                  {React.cloneElement(cat.icon as React.ReactElement, { size: 28 })}
                 </div>
                 <h3 className="text-xl md:text-2xl font-black text-slate-900 mb-6 italic uppercase">{cat.title}</h3>
                 <ul className="space-y-4">
@@ -137,7 +137,10 @@ export default function PartnersPage() {
               </Link>
             </div>
           </div>
-          <Building2 size={300} className="absolute -bottom-20 -right-20 text-white/5 opacity-50 hidden md:block" />
+          {/* Background Decorative Icon - Desktop Only */}
+          <div className="absolute -bottom-20 -right-20 text-white/5 opacity-50 hidden md:block pointer-events-none">
+            <Building2 size={300} />
+          </div>
         </div>
       </section>
     </main>

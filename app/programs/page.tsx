@@ -1,8 +1,7 @@
 "use client";
 import React from "react";
 import { 
-  BookOpen, Heart, Sprout, Home, Scale, 
-  ShieldCheck, ArrowRight, Laptop, Activity,
+  Sprout, Home, ShieldCheck, ArrowRight, Laptop, Activity,
   Users, Briefcase, GraduationCap, Gavel
 } from "lucide-react";
 import Link from "next/link";
