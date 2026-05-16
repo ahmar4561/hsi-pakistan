@@ -2,7 +2,7 @@
 import React from "react";
 import { 
   Handshake, Globe, GraduationCap, HeartPulse, 
-  Building2, Users2, Briefcase, ShieldCheck, ArrowRight 
+  Building2, Users2, Briefcase, ShieldCheck
 } from "lucide-react";
 import Link from "next/link";
 
@@ -133,7 +133,7 @@ export default function PartnersPage() {
             </p>
             <div className="flex justify-center">
               <Link href="/contact" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 md:px-12 md:py-5 rounded-2xl md:rounded-[2rem] font-black text-lg md:text-xl transition-all shadow-xl flex items-center gap-3">
-                Become a Partner <ArrowRight size={24} />
+                Become a Partner
               </Link>
             </div>
           </div>
