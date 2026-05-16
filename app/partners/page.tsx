@@ -137,7 +137,6 @@ export default function PartnersPage() {
               </Link>
             </div>
           </div>
-          {/* Background Decorative Icon - Desktop Only */}
           <div className="absolute -bottom-20 -right-20 text-white/5 opacity-50 hidden md:block pointer-events-none">
             <Building2 size={300} />
           </div>

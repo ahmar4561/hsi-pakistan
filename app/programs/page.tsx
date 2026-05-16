@@ -12,7 +12,7 @@ export default function ProgramsPage() {
       title: "Education Initiatives",
       id: "SDG 4",
       desc: "Providing scholarships for deserving students and re-enrolling school dropouts into the system.",
-      icon: <GraduationCap size={32} />,
+      icon: <GraduationCap size={28} />,
       features: ["Scholarships", "Dropout Re-enrollment", "Educational Supplies"],
       color: "blue"
     },
@@ -20,7 +20,7 @@ export default function ProgramsPage() {
       title: "Skill Development",
       id: "SDG 8",
       desc: "Empowering youth through digital literacy, vocational training, and technical workshops.",
-      icon: <Laptop size={32} />,
+      icon: <Laptop size={28} />,
       features: ["Digital Literacy", "Vocational Training", "Career Counseling"],
       color: "indigo"
     },
@@ -28,7 +28,7 @@ export default function ProgramsPage() {
       title: "Health & Wellbeing",
       id: "SDG 3",
       desc: "Organizing free medical camps, mental health awareness, and hygiene sessions in rural areas.",
-      icon: <Activity size={32} />,
+      icon: <Activity size={28} />,
       features: ["Medical Camps", "Mental Health", "Mother & Child Support"],
       color: "red"
     },
@@ -36,7 +36,7 @@ export default function ProgramsPage() {
       title: "Climate & Environment",
       id: "SDG 13",
       desc: "Tree plantation drives, waste management education, and building climate resilience.",
-      icon: <Sprout size={32} />,
+      icon: <Sprout size={28} />,
       features: ["Tree Plantation", "Climate Resilience", "Waste Management"],
       color: "emerald"
     },
@@ -44,7 +44,7 @@ export default function ProgramsPage() {
       title: "Community Development",
       id: "SDG 11",
       desc: "Improving local infrastructure and supporting community-based social welfare projects.",
-      icon: <Home size={32} />,
+      icon: <Home size={28} />,
       features: ["Local Infrastructure", "Social Welfare", "Basic Services"],
       color: "orange"
     },
@@ -52,7 +52,7 @@ export default function ProgramsPage() {
       title: "Peace & Justice",
       id: "SDG 16",
       desc: "Advocating for human rights, community justice, and building strong local institutions.",
-      icon: <Gavel size={32} />,
+      icon: <Gavel size={28} />,
       features: ["Human Rights", "Justice Advocacy", "Strong Institutions"],
       color: "slate"
     },
@@ -60,7 +60,7 @@ export default function ProgramsPage() {
       title: "Capacity Building",
       id: "SDG 17",
       desc: "Developing leadership skills and training volunteers for effective community impact.",
-      icon: <Users size={32} />,
+      icon: <Users size={28} />,
       features: ["Leadership Training", "Volunteer Management", "NGO Workshops"],
       color: "cyan"
     }
@@ -85,7 +85,7 @@ export default function ProgramsPage() {
           {mainPrograms.map((p, i) => (
             <div key={i} className="bg-white rounded-[2rem] md:rounded-[2.5rem] p-8 md:p-10 shadow-sm border border-slate-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group">
               <div className="w-14 h-14 md:w-16 md:h-16 bg-slate-50 text-blue-600 rounded-2xl flex items-center justify-center mb-6 md:mb-8 group-hover:bg-blue-600 group-hover:text-white transition-all">
-                {React.cloneElement(p.icon as React.ReactElement, { size: 28 })}
+                {p.icon}
               </div>
               <span className="text-[10px] md:text-xs font-bold text-blue-500 uppercase tracking-widest">{p.id}</span>
               <h3 className="text-xl md:text-2xl font-black text-slate-900 mt-2 mb-4 italic uppercase">{p.title}</h3>
