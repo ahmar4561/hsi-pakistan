@@ -10,7 +10,7 @@ export default function PartnersPage() {
   const partnerCategories = [
     {
       title: "Strategic Partners",
-      icon: <Building2 className="text-blue-600" />,
+      icon: <Building2 className="text-blue-600" size={28} />,
       items: [
         "Government departments (social welfare)", 
         "Local community organizations", 
@@ -19,7 +19,7 @@ export default function PartnersPage() {
     },
     {
       title: "Education Partners",
-      icon: <GraduationCap className="text-emerald-600" />,
+      icon: <GraduationCap className="text-emerald-600" size={28} />,
       items: [
         "Schools and colleges for outreach", 
         "Vocational training institutes", 
@@ -28,7 +28,7 @@ export default function PartnersPage() {
     },
     {
       title: "Health Partners",
-      icon: <HeartPulse className="text-red-600" />,
+      icon: <HeartPulse className="text-red-600" size={28} />,
       items: [
         "Local hospitals and clinics", 
         "Volunteer doctors", 
@@ -37,7 +37,7 @@ export default function PartnersPage() {
     },
     {
       title: "Development & Climate",
-      icon: <Globe className="text-green-600" />,
+      icon: <Globe className="text-green-600" size={28} />,
       items: [
         "Environmental NGOs", 
         "Tree plantation groups", 
@@ -46,7 +46,7 @@ export default function PartnersPage() {
     },
     {
       title: "Corporate & Donor",
-      icon: <Briefcase className="text-indigo-600" />,
+      icon: <Briefcase className="text-indigo-600" size={28} />,
       items: [
         "CSR partners", 
         "Private donors and foundations", 
@@ -55,7 +55,7 @@ export default function PartnersPage() {
     },
     {
       title: "Community Partners",
-      icon: <Users2 className="text-orange-600" />,
+      icon: <Users2 className="text-orange-600" size={28} />,
       items: [
         "Local community leaders", 
         "Youth groups and networks", 
@@ -106,7 +106,7 @@ export default function PartnersPage() {
             {partnerCategories.map((cat, i) => (
               <div key={i} className="bg-white p-8 md:p-10 rounded-[2rem] md:rounded-[3rem] shadow-xl border border-slate-100 hover:shadow-2xl transition-all">
                 <div className="w-14 h-14 bg-slate-50 rounded-2xl flex items-center justify-center mb-6">
-                  {React.cloneElement(cat.icon as React.ReactElement, { size: 28 })}
+                  {cat.icon}
                 </div>
                 <h3 className="text-xl md:text-2xl font-black text-slate-900 mb-6 italic uppercase">{cat.title}</h3>
                 <ul className="space-y-4">
